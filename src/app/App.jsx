@@ -19,8 +19,8 @@ function App() {
           <Route path="/posts/:postId?" component={Posts} />
           {/* Если ничего не найдено то Redirect на путь /404 */}
           {/* Если мы перешли по path="/404" => отобразить Компонент */}
-          <Route path="/404" component={NotFound} />
           <Redirect from="/admin" to="/dashboard" />
+          <Route path="/404" component={NotFound} />
           <Redirect to="/404" />
         </Switch>
       </div>
