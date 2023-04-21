@@ -13,7 +13,8 @@ const Posts = ({ match, location }) => {
   const search = query.parse(location.search);
   const postId = match.params.postId;
 
-  const cropPosts = search
+  // Если в объекте `search` есть наш переданный в URL параметр `count` =>
+  const cropPosts = search.count
     ? _(posts).slice(0).take(search.count).value()
     : posts;
 
