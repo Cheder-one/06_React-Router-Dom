@@ -3,18 +3,29 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
+    <ul className="nav flex-column">
+      <li className="nav-item">
+        <Link className="nav-link" to="/">
+          Home
+        </Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
+      <li className="nav-item">
+        <Link className="nav-link" to="/login">
+          Login
+        </Link>
       </li>
-      <li>
-        <Link to="/posts">Posts</Link>
+      <li className="nav-item">
+        <Link className="nav-link" to="/posts">
+          Posts
+        </Link>
+        <Link className="nav-link" to="/posts/?count=1">
+          My path
+        </Link>
       </li>
-      <li>
-        <Link to="/dashboard">Dashboard</Link>
+      <li className="nav-item">
+        <Link className="nav-link" to="/dashboard">
+          Dashboard
+        </Link>
       </li>
     </ul>
   );

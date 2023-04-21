@@ -1,16 +1,32 @@
 import PostList from "../postsList";
 import Post from "../post";
-const Posts = ({ match }) => {
+import query from "query-string";
+import _ from "lodash";
+
+const Posts = ({ match, location }) => {
   const posts = [
     { id: 1, title: "Post 1" },
     { id: 2, title: "Post 2" },
     { id: 3, title: "Post 3" },
   ];
+
+  const search = query.parse(location.search);
   const postId = match.params.postId;
+
+  const cropPosts = search
+    ? _(posts).slice(0).take(search.count).value()
+    : posts;
+
   return (
     <>
       {/* Передаем ли мы опциональный URL адрес поста? */}
-      {postId ? <Post posts={posts} id={postId} /> : <PostList posts={posts} />}
+      {postId ? (
+        <>
+          <Post posts={posts} id={postId} />
+        </>
+      ) : (
+        <PostList posts={cropPosts} />
+      )}
     </>
   );
 };
