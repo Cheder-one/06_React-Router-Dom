@@ -1,7 +1,7 @@
 import PostList from "../postsList";
 import Post from "../post";
 
-const Posts = ({ match }) => {
+const Posts = ({ match, history }) => {
   const posts = [
     { id: 1, title: "Post 1" },
     { id: 2, title: "Post 2" },
@@ -15,7 +15,7 @@ const Posts = ({ match }) => {
       {/* Передаем ли мы опциональный URL адрес поста? */}
       {postId ? (
         <>
-          <Post posts={posts} id={postId} />
+          <Post posts={posts} id={postId} history={history} />
         </>
       ) : (
         <PostList posts={posts} />
