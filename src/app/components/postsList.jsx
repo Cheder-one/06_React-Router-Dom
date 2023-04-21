@@ -1,6 +1,7 @@
 import React from "react";
 
 const PostList = ({ posts }) => {
+  // Нет, не передаем никакой URL => выводим список постов
   return (
     <>
       {posts.map((post) => (
