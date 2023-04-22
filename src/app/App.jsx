@@ -4,7 +4,7 @@ import Login from "./components/navigation/login";
 import NavBar from "./components/navigation/navBar";
 import Posts from "./components/navigation/posts";
 import Dashboard from "./components/navigation/dashboard";
-import NotFound from "./components/redirect/notFound";
+import NotFound from "./components/404/notFound";
 
 function App() {
   return (
