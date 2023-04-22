@@ -13,7 +13,6 @@ function App() {
       <div className="ms-3 mt-2">
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/dashboard/stats" component={Dashboard} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/login" component={Login} />
           <Route path="/posts/:postId?" component={Posts} />
